@@ -16,5 +16,4 @@
 
 
 
-- **Repository**: [DAILYDIARY](https://github.com/vikhiat/DAILYDIARY)
 
