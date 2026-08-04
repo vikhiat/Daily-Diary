@@ -1,0 +1,44 @@
+#  Day 1 – Training Orientation & Project Exploration
+
+**Date:** *30 July 2026*
+
+##  Objective
+
+To understand the complete roadmap of the Machine Learning project journey and gain clarity about the concepts that will be covered before beginning practical implementation for Student Productivity Prediction.
+
+---
+
+##  Session Summary
+
+The first day of the Machine Learning journey focused on building a strong theoretical foundation rather than writing code. I explored the complete workflow of a Machine Learning project and understood how each stage contributes to solving a real-world problem.
+
+Instead of starting with coding, I studied how a Machine Learning project is carried out step by step—from understanding the data and preparing it for analysis to building predictive models. This session gave me a clear understanding of the complete learning journey that I will follow during the development of the Student Productivity Prediction system.
+
+Towards the end of the session, I began exploring project ideas and searching for suitable datasets that could be used for predicting student productivity levels (Low/Med/High).
+
+---
+
+##  Project Progress
+
+- Understood the structure and objectives of the Machine Learning project.
+- Explored different project ideas focused on student performance and productivity.
+- Started searching for suitable datasets for the Student Productivity Prediction project.
+- Identified potential features that could influence student productivity (study hours, sleep patterns, attendance, etc.).
+
+---
+
+##  Key Takeaway
+
+Today's study helped me understand that building a successful Machine Learning solution involves much more than training a model. Selecting the right problem, understanding the dataset, defining clear productivity categories (Low/Med/High), and following a structured workflow are equally important for developing reliable AI applications.
+
+---
+
+##  Reflection
+
+The first day gave me a clear understanding of the overall project roadmap. Although there was no hands-on coding session, I realized that understanding the fundamentals is essential before beginning practical implementation. I am excited to start building my Student Productivity Prediction project and applying these concepts in the upcoming sessions.
+
+---
+
+##  Continue Learning
+
+**Next:** [Day 2 – Python Fundamentals & Project Finalization](Day02.md)
