@@ -1,0 +1,95 @@
+**Previous:** [Day 4 – Exploratory Data Analysis (EDA) & Feature Engineering](Day04.md)
+
+---
+
+#  Day 5 – Advanced Data Visualization & Model Selection
+
+**Date:** 3 August 2026
+
+---
+
+##  Objective
+
+To create advanced data visualizations that provide deeper insights into the Student Productivity dataset, understand different Machine Learning algorithms suitable for classification tasks, and select the most appropriate models for predicting productivity levels (Low/Med/High).
+
+---
+
+##  Session Summary
+
+Today's session focused on **Advanced Data Visualization** and **Model Selection** for classification problems. The trainer explained how advanced visualizations can reveal complex patterns and relationships in the data that basic charts might miss.
+
+For model selection, we discussed various classification algorithms and their suitability for different types of problems. Since our Student Productivity Prediction is a multi-class classification problem (Low/Med/High), we need models that can handle three distinct classes effectively.
+
+---
+
+##  Hands-on Practice
+
+### Advanced Data Visualization
+
+I created the following advanced visualizations for the Student Productivity dataset:
+
+- **Distribution Plots**: Overlaid distributions of numerical features by productivity level
+- **Violin Plots**: Combined box plots and kernel density plots to visualize feature distributions
+- **Swarm Plots**: Displayed individual data points while avoiding overlap
+- **Heatmaps**: Visualized correlation matrices with annotations
+- **Pair Plots**: Created scatter plot matrices for numerical features, colored by productivity level
+- **Stacked Bar Charts**: Showed the composition of categorical features across productivity levels
+- **Boxen Plots**: Enhanced box plots that show more detailed distribution information
+
+### Model Selection Research
+
+I researched and compared the following classification algorithms for the Student Productivity Prediction:
+
+1. **Logistic Regression**: Simple and interpretable baseline model
+2. **Decision Trees**: Easy to understand, can handle non-linear relationships
+3. **Random Forest**: Ensemble method that reduces overfitting, handles feature importance
+4. **Gradient Boosting (XGBoost, LightGBM)**: High performance, handles complex patterns
+5. **Support Vector Machines (SVM)**: Effective in high-dimensional spaces
+6. **K-Nearest Neighbors (KNN)**: Simple, instance-based learning
+7. **Naive Bayes**: Fast, works well with categorical data
+
+### Model Selection Criteria
+
+I considered the following factors for model selection:
+- **Accuracy**: Overall correctness of predictions
+- **Precision & Recall**: Performance on each productivity class
+- **F1-Score**: Harmonic mean of precision and recall
+- **Interpretability**: Ability to explain model decisions
+- **Training Time**: Computational efficiency
+- **Scalability**: Performance with larger datasets
+- **Handling of Imbalanced Data**: If productivity classes are unevenly distributed
+
+---
+
+##  Project Progress
+
+For the Student Productivity Prediction project:
+
+- Created advanced visualizations revealing complex patterns in student data
+- Discovered that study consistency and sleep quality have non-linear relationships with productivity
+- Selected top 3 models for initial implementation: Random Forest, XGBoost, and Logistic Regression
+- Random Forest for its interpretability and ability to handle mixed data types
+- XGBoost for its high accuracy and handling of complex patterns
+- Logistic Regression as a baseline model for comparison
+- Prepared the dataset for model training (train-test split, feature scaling)
+- Created a model evaluation framework with appropriate metrics
+
+---
+
+##  Key Takeaway
+
+Today's session helped me understand the importance of advanced visualizations in uncovering hidden patterns in the data. The model selection process made me realize that there's no single "best" model - the choice depends on the specific problem, data characteristics, and business requirements. For Student Productivity Prediction, I'll start with simpler models and gradually move to more complex ones based on performance.
+
+---
+
+##  Reflection
+
+Today was an exciting day as I moved from data exploration to model planning. The advanced visualizations provided deeper insights into how different factors interact to affect student productivity. I now have a clear understanding of which models to implement first and how to evaluate their performance. The combination of Random Forest, XGBoost, and Logistic Regression will give me a good baseline to compare against more advanced models. I'm eager to start implementing these models in the next session.
+
+---
+
+---
+
+##  Continue Learning
+
+**Next:** [Day 6 – Model Implementation & Training](Day06.md)
