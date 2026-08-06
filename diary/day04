@@ -1,0 +1,109 @@
+**Previous:** [Day 3 – Data Cleaning, Preprocessing and Dataset Analysis](Day03.md)
+
+---
+
+#  Day 4 – Exploratory Data Analysis (EDA) & Feature Engineering
+
+**Date:** 2 August 2026
+
+---
+
+##  Objective
+
+To perform comprehensive Exploratory Data Analysis on the Student Productivity dataset, understand the relationships between different features, identify patterns and trends, and create new meaningful features through feature engineering to improve model performance.
+
+---
+
+##  Session Summary
+
+Today's session focused on **Exploratory Data Analysis (EDA)**, which is crucial for understanding the underlying patterns, relationships, and distributions within the dataset. EDA helps in making informed decisions about feature selection, data transformation, and model selection.
+
+The trainer explained the importance of EDA in Machine Learning and how it helps in:
+- Understanding the structure and characteristics of the data
+- Identifying patterns, trends, and relationships between variables
+- Detecting anomalies and outliers
+- Formulating hypotheses about the data
+- Guiding feature engineering and selection
+
+For the Student Productivity Prediction project, EDA is particularly important to understand how different factors (study hours, sleep, attendance, etc.) relate to productivity levels (Low/Med/High).
+
+---
+
+##  Hands-on Practice
+
+I performed the following EDA tasks on the Student Productivity dataset:
+
+### Univariate Analysis
+
+- Analyzed the distribution of the target variable (Productivity: Low/Med/High)
+- Created count plots to visualize the class distribution
+- Examined the distribution of numerical features using histograms
+- Analyzed categorical features using bar charts
+- Calculated measures of central tendency (mean, median, mode)
+- Computed measures of dispersion (standard deviation, variance, range)
+
+### Bivariate Analysis
+
+- Created scatter plots to understand relationships between numerical features
+- Used box plots to analyze the distribution of numerical features across different productivity levels
+- Generated grouped bar charts to understand categorical feature distributions by productivity level
+- Calculated correlation coefficients between numerical features
+- Identified features with strong correlation to the target variable
+
+### Multivariate Analysis
+
+- Created pair plots to visualize relationships between multiple features
+- Used heatmaps to visualize correlation matrices
+- Generated grouped box plots to compare distributions across multiple categories
+
+### Feature Engineering
+
+- Created new features from existing ones:
+  - Study efficiency ratio (study hours / total available hours)
+  - Sleep quality score (based on sleep duration and consistency)
+  - Attendance percentage
+  - Study consistency score
+- Encoded categorical variables using appropriate techniques
+- Scaled numerical features using standardization and normalization
+- Created interaction features by combining relevant features
+
+### Data Visualization
+
+- Used Matplotlib and Seaborn libraries for creating visualizations
+- Created custom color palettes for better visualization
+- Added appropriate labels, titles, and legends to charts
+- Saved important visualizations for project documentation
+
+---
+
+##  Project Progress
+
+Applied all EDA techniques to the Student Productivity Prediction dataset:
+
+- Performed comprehensive univariate analysis on all features
+- Created visualizations to understand the distribution of productivity levels
+- Identified key features that correlate strongly with productivity
+- Discovered that study hours, sleep quality, and attendance have significant impact on productivity
+- Created new meaningful features through feature engineering
+- Generated insights and hypotheses about student productivity
+- Documented all findings in the project notebook
+
+---
+
+##  Key Takeaway
+
+Today's EDA session provided valuable insights into the Student Productivity dataset. I discovered important patterns and relationships that will guide the feature selection and model building process. Feature engineering allowed me to create more informative features that can potentially improve the model's predictive accuracy for classifying student productivity levels.
+
+---
+
+##  Reflection
+
+Today was one of the most insightful days of the project. Performing EDA on the Student Productivity dataset helped me understand the data at a much deeper level. I was able to identify which features are most strongly correlated with productivity levels and created new features that capture more information. The visualizations not only helped in understanding the data but also provided clear insights that will be valuable for the next stages of the project. I feel more confident about the dataset and excited to move forward with model building.
+
+---
+
+---
+
+##  Continue Learning
+
+**Next:** [Day 5 – Data Visualization & Model Selection](Day05.md)
