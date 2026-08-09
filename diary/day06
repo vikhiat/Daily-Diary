@@ -1,0 +1,129 @@
+**Previous:** [Day 5 – Advanced Data Visualization & Model Selection](Day05.md)
+
+---
+
+#  Day 6 – Model Implementation & Training
+
+**Date:** 4 August 2026
+
+---
+
+##  Objective
+
+To implement the selected Machine Learning models for Student Productivity Prediction, train them on the preprocessed dataset, and understand the model training process, hyperparameter tuning, and initial performance evaluation.
+
+---
+
+##  Session Summary
+
+Today's session focused on **Model Implementation and Training**. The trainer explained the complete workflow for implementing classification models in Python using scikit-learn and other libraries.
+
+We covered:
+- Data preparation for model training (train-test split, feature scaling)
+- Model initialization and configuration
+- Model training process
+- Making predictions on test data
+- Basic model evaluation
+- Saving and loading trained models
+
+The session emphasized the importance of starting with baseline models before moving to more complex algorithms, and the need for proper evaluation to avoid overfitting.
+
+---
+
+##  Hands-on Practice
+
+### Data Preparation
+
+I prepared the Student Productivity dataset for model training:
+
+- Split the dataset into features (X) and target (y)
+- Encoded categorical variables using LabelEncoder and OneHotEncoder
+- Scaled numerical features using StandardScaler
+- Split the data into training (80%) and testing (20%) sets using train_test_split
+- Ensured stratified sampling to maintain class distribution in both sets
+
+### Model Implementation
+
+I implemented the following models for Student Productivity Prediction:
+
+#### 1. Logistic Regression (Baseline Model)
+```python
+from sklearn.linear_model import LogisticRegression
+from sklearn.multioutput import MultiOutputClassifier
+
+# Initialize and train the model
+lr_model = LogisticRegression(multi_class='multinomial', solver='lbfgs', max_iter=1000)
+lr_model.fit(X_train, y_train)
+
+# Make predictions
+y_pred_lr = lr_model.predict(X_test)
+```
+
+#### 2. Random Forest Classifier
+```python
+from sklearn.ensemble import RandomForestClassifier
+
+# Initialize and train the model
+rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
+rf_model.fit(X_train, y_train)
+
+# Make predictions
+y_pred_rf = rf_model.predict(X_test)
+```
+
+#### 3. XGBoost Classifier
+```python
+from xgboost import XGBClassifier
+
+# Initialize and train the model
+xgb_model = XGBClassifier(objective='multi:softprob', num_class=3, random_state=42)
+xgb_model.fit(X_train, y_train)
+
+# Make predictions
+y_pred_xgb = xgb_model.predict(X_test)
+```
+
+### Initial Model Evaluation
+
+I evaluated each model using the following metrics:
+
+- **Accuracy**: Overall correctness of predictions
+- **Classification Report**: Precision, recall, and F1-score for each class (Low, Med, High)
+- **Confusion Matrix**: Visual representation of actual vs predicted classes
+- **Cross-Validation**: K-fold cross-validation to ensure model stability
+
+---
+
+##  Project Progress
+
+For the Student Productivity Prediction project:
+
+- Successfully prepared the dataset for model training
+- Implemented Logistic Regression as the baseline model
+- Implemented Random Forest Classifier with 100 trees
+- Implemented XGBoost Classifier for gradient boosting
+- Performed initial training on all three models
+- Generated predictions on the test set for each model
+- Calculated basic evaluation metrics for model comparison
+- Saved all trained models for future use
+- Documented the training process and initial results
+
+---
+
+##  Key Takeaway
+
+Today's session was highly practical as I implemented and trained multiple Machine Learning models on the Student Productivity dataset. I learned that even simple models like Logistic Regression can provide reasonable baseline performance, while ensemble methods like Random Forest and XGBoost often achieve better accuracy. The initial results show promising performance, with all models achieving accuracy above 75% on the test set.
+
+---
+
+##  Reflection
+
+Today was a significant milestone in the project as I moved from data exploration to actual model implementation. Training the models on the Student Productivity dataset and seeing the initial results was very rewarding. The Random Forest model performed the best among the three, achieving over 85% accuracy. However, I realize that this is just the beginning - there's still room for improvement through hyperparameter tuning, feature engineering, and trying more advanced models. I'm excited to optimize these models in the next session.
+
+---
+
+---
+
+##  Continue Learning
+
+**Next:** [Day 7 – Model Evaluation & Hyperparameter Tuning](Day07.md)
