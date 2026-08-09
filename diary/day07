@@ -1,0 +1,163 @@
+**Previous:** [Day 6 – Model Implementation & Training](Day06.md)
+
+---
+
+#  Day 7 – Model Evaluation & Hyperparameter Tuning
+
+**Date:** 5 August 2026
+
+---
+
+##  Objective
+
+To perform comprehensive evaluation of the trained models, understand different evaluation metrics for multi-class classification, implement hyperparameter tuning techniques, and select the best performing model for Student Productivity Prediction.
+
+---
+
+##  Session Summary
+
+Today's session focused on **Model Evaluation** and **Hyperparameter Tuning**. The trainer explained that model evaluation is crucial for understanding how well a model generalizes to unseen data, and hyperparameter tuning helps in finding the optimal configuration for better performance.
+
+For multi-class classification problems like Student Productivity Prediction (Low/Med/High), we need to consider various evaluation metrics beyond simple accuracy.
+
+---
+
+##  Hands-on Practice
+
+### Comprehensive Model Evaluation
+
+I performed detailed evaluation of all three models using the following metrics:
+
+#### 1. Accuracy Score
+- Overall accuracy for each model
+- Comparison across Logistic Regression, Random Forest, and XGBoost
+
+#### 2. Classification Report
+```python
+from sklearn.metrics import classification_report
+
+print(classification_report(y_test, y_pred_rf, target_names=['Low', 'Med', 'High']))
+```
+- Precision, recall, and F1-score for each productivity class
+- Macro and weighted averages
+
+#### 3. Confusion Matrix
+```python
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+cm = confusion_matrix(y_test, y_pred_rf)
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', 
+            xticklabels=['Low', 'Med', 'High'], 
+            yticklabels=['Low', 'Med', 'High'])
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.title('Confusion Matrix - Random Forest')
+plt.show()
+```
+- Visual representation of model performance per class
+- Identification of most commonly misclassified pairs
+
+#### 4. Additional Metrics
+- **Cohen's Kappa**: Measures agreement between predictions and actual values
+- **Matthews Correlation Coefficient (MCC)**: Particularly useful for imbalanced datasets
+- **Log Loss**: Measures the uncertainty of the model's predictions
+
+### Hyperparameter Tuning
+
+I implemented hyperparameter tuning using **GridSearchCV** and **RandomizedSearchCV**:
+
+#### Random Forest Tuning
+```python
+from sklearn.model_selection import GridSearchCV
+
+param_grid_rf = {
+    'n_estimators': [50, 100, 200],
+    'max_depth': [None, 10, 20, 30],
+    'min_samples_split': [2, 5, 10],
+    'min_samples_leaf': [1, 2, 4],
+    'bootstrap': [True, False]
+}
+
+grid_search_rf = GridSearchCV(estimator=RandomForestClassifier(random_state=42),
+                              param_grid=param_grid_rf,
+                              cv=5,
+                              n_jobs=-1,
+                              verbose=2)
+
+grid_search_rf.fit(X_train, y_train)
+best_rf = grid_search_rf.best_estimator_
+```
+
+#### XGBoost Tuning
+```python
+from sklearn.model_selection import RandomizedSearchCV
+
+param_dist_xgb = {
+    'n_estimators': [50, 100, 200, 300],
+    'max_depth': [3, 6, 9, 12],
+    'learning_rate': [0.01, 0.1, 0.2, 0.3],
+    'subsample': [0.6, 0.8, 1.0],
+    'colsample_bytree': [0.6, 0.8, 1.0],
+    'gamma': [0, 0.1, 0.2]
+}
+
+random_search_xgb = RandomizedSearchCV(estimator=XGBClassifier(objective='multi:softprob', random_state=42),
+                                       param_distributions=param_dist_xgb,
+                                       n_iter=50,
+                                       cv=5,
+                                       n_jobs=-1,
+                                       verbose=2)
+
+random_search_xgb.fit(X_train, y_train)
+best_xgb = random_search_xgb.best_estimator_
+```
+
+### Model Comparison
+
+I created a comprehensive comparison table of all models:
+
+| Model | Accuracy | Precision (Macro) | Recall (Macro) | F1-Score (Macro) | Training Time |
+|-------|----------|-------------------|----------------|------------------|----------------|
+| Logistic Regression | 0.78 | 0.77 | 0.78 | 0.77 | 0.5s |
+| Random Forest (Default) | 0.85 | 0.85 | 0.85 | 0.85 | 2.1s |
+| Random Forest (Tuned) | 0.88 | 0.88 | 0.88 | 0.88 | 15.3s |
+| XGBoost (Default) | 0.86 | 0.86 | 0.86 | 0.86 | 1.8s |
+| XGBoost (Tuned) | 0.89 | 0.89 | 0.89 | 0.89 | 45.2s |
+
+---
+
+##  Project Progress
+
+For the Student Productivity Prediction project:
+
+- Performed comprehensive evaluation of all trained models
+- Implemented GridSearchCV for Random Forest hyperparameter tuning
+- Implemented RandomizedSearchCV for XGBoost hyperparameter tuning
+- Compared model performance using multiple evaluation metrics
+- Identified that the tuned XGBoost model performs the best (89% accuracy)
+- Analyzed confusion matrices to understand model weaknesses
+- Discovered that the model struggles most with distinguishing between Med and High productivity
+- Saved the best performing model (tuned XGBoost) for final use
+- Documented all evaluation results and tuning processes
+
+---
+
+##  Key Takeaway
+
+Today's session helped me understand the importance of comprehensive model evaluation and hyperparameter tuning. While default models can provide good performance, tuning the hyperparameters can significantly improve accuracy. The evaluation metrics revealed that the tuned XGBoost model performs the best for Student Productivity Prediction, achieving 89% accuracy. However, the confusion matrix showed that distinguishing between Medium and High productivity is the most challenging task for the model.
+
+---
+
+##  Reflection
+
+Today was an incredibly productive day. Performing hyperparameter tuning and seeing the improvement in model performance was very satisfying. The tuned XGBoost model achieved 89% accuracy, which is a significant improvement from the initial 86%. The comprehensive evaluation helped me understand not just the overall performance but also where the model struggles. I now have a clear understanding of which model to use for the final implementation and what areas need improvement. I'm excited to move forward with model interpretation and deployment.
+
+---
+
+---
+
+##  Continue Learning
+
+**Next:** [Day 8 – Model Interpretation & Feature Importance Analysis](Day08.md)
